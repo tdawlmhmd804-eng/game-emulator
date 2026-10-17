@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل تطبيق ألعاب الهواتف للكمبيوتر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        header {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid #1e293b;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        p {
+            font-size: 18px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .btn-download {
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-download:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .device-notice {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #38bdf8;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 25px auto 0 auto;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0b0f19;
+            color: #64748b;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎮 Game Hub</div>
+    </header>
+
+    <div class="container">
+        <h1>شغل ألعاب الهواتف على جهازك بكل احترافية</h1>
+        <p>استمتع بتجربة لعب سلسة، إطارات عالية، ودعم كامل للتحكم بالماوس والكيبورد.</p>
+
+        <!-- زر التحميل المباشر من نفس موقعك على جيت هب -->
+        <!-- استبدل كلمة game-emulator.exe باسم ملف التطبيق الحقيقي الذي سترفعه في جيت هب -->
+        <a href="game-emulator.exe" class="btn-download" download>تحميل التطبيق مباشرة (Free)</a>
+
+        <!-- تنبيه يظهر إذا دخل المستخدم من الهاتف -->
+        <div id="mobileNotice" class="device-notice">
+            💡 <strong>ملاحظة:</strong> أنت تتصفح من هاتف محمول. التطبيق يعمل بكفاءة أعلى على الكمبيوتر ويفضل استخدامه مع الماوس والكيبورد للحصول على أفضل تجربة لعب.
+        </div>
+    </div>
+
+    <footer>
+        جميع الحقوق محفوظة &copy; 2026
+    </footer>
+
+    <script>
+        // دالة لاكتشاف الهاتف وإظهار النص التنبيهي فقط بدون منع التحميل
+        function checkDeviceNotice() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const mobileNotice = document.getElementById('mobileNotice');
+
+            if (/android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                mobileNotice.style.display = 'block';
+            }
+        }
+
+        window.onload = checkDeviceNotice;
+    </script>
+
+</body>
+</html>
